@@ -507,6 +507,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   max-width: 580px;
+  height: 480px; /* Fixed height for absolute alignment grid */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -534,10 +535,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Floating Glass Cards */
 .glass-card {
   position: absolute;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: var(--radius-lg);
   padding: 0.75rem 1.25rem;
   display: flex;
@@ -545,7 +546,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: var(--sp-2);
   box-shadow: 0 8px 32px rgba(13, 77, 58, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.5);
   z-index: 3;
-  pointer-events: none;
+  pointer-events: auto; /* enable interaction */
   font-size: var(--fs-body-sm);
   font-weight: var(--fw-semibold);
   color: var(--clr-primary-900);
@@ -553,27 +554,25 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
+.glass-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 36px rgba(13, 77, 58, 0.12), 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
 .glass-card__check {
   color: var(--clr-accent-500);
   font-weight: var(--fw-bold);
 }
 
-/* Positioning cards around product composition */
-.glass-card--1 { top: 15%; left: -5%; }
-.glass-card--2 { top: 25%; right: -5%; }
-.glass-card--3 { bottom: 25%; left: -8%; }
-.glass-card--4 { bottom: 18%; right: -2%; }
-
-/* Gentle bobbing floating keyframes */
-@keyframes floatAnimation {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
+/* Positioning cards around product composition (Symmetrical 2x2 Grid) */
+.glass-card--1 { top: 28%; left: -15px; }
+.glass-card--2 { top: 28%; right: -15px; }
+.glass-card--3 { top: 62%; left: -15px; }
+.glass-card--4 { top: 62%; right: -15px; }
 
 .float-animation {
-  animation: floatAnimation 5s ease-in-out infinite;
-  animation-delay: var(--float-delay, 0s);
+  /* Bouncing animation removed to avoid visual clutter */
 }
 
 /* Hero Entrance Animations */

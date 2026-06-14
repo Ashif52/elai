@@ -134,6 +134,7 @@
   .hero__composition {
     max-width: 440px;
     margin: 0 auto;
+    height: 320px; /* Fixed height for mobile/tablet grid alignment */
   }
 
   .glass-card {
@@ -141,10 +142,10 @@
     padding: 0.5rem 1rem;
   }
 
-  .glass-card--1 { top: 10%; left: -2%; }
-  .glass-card--2 { top: 20%; right: -2%; }
-  .glass-card--3 { bottom: 20%; left: -4%; }
-  .glass-card--4 { bottom: 15%; right: -2%; }
+  .glass-card--1 { top: 25%; left: -10px; }
+  .glass-card--2 { top: 25%; right: -10px; }
+  .glass-card--3 { top: 65%; left: -10px; }
+  .glass-card--4 { top: 65%; right: -10px; }
 
   .why-choose__grid {
     grid-template-columns: repeat(2, 1fr);
