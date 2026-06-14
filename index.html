@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elai Organics — Premium farm-to-home organic products crafted using traditional Indian methods. 100% natural, no preservatives. A2 Ghee, Cold-Pressed Oils & more.">
+  <title>Elai Organics | Pure & Natural Farm-to-Home Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ===================== TOP INFO BAR ===================== -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="top-bar__item">🌿 100% Natural</span>
+      <span class="top-bar__item">🏺 Traditional Methods</span>
+      <span class="top-bar__item">🛡️ No Preservatives</span>
+      <span class="top-bar__item">🇮🇳 Made in India</span>
+      <span class="top-bar__item">🚚 Delivery Across India</span>
+      <span class="top-bar__item">🌿 100% Natural</span>
+      <span class="top-bar__item">🏺 Traditional Methods</span>
+      <span class="top-bar__item">🛡️ No Preservatives</span>
+      <span class="top-bar__item">🇮🇳 Made in India</span>
+      <span class="top-bar__item">🚚 Delivery Across India</span>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="Elai Organics Home">
+        <img src="images/logo.png" alt="Elai Organics" class="logo__image">
+      </a>
+
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="shop.html" class="nav__link">Shop</a></li>
+          <li><a href="categories.html" class="nav__link">Categories</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="action-btn" id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="wishlist.html" class="action-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </a>
+        <button class="action-btn action-btn--cart" id="cartBtn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <a href="profile.html" class="action-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO SLIDER ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__slider" id="heroSlider">
+      
+      <!-- Slide 1 -->
+      <div class="hero__slide hero__slide--active" data-slide="0">
+        <div class="hero__bg hero__bg--1"></div>
+        <div class="hero__container">
+          <!-- Left Column (45%) -->
+          <div class="hero__left">
+            <span class="hero__badge">🌿 100% Natural</span>
+            <h1 class="hero__title">Tradition Crafted.<br><em>Naturally Nourishing.</em></h1>
+            <p class="hero__desc">Premium A2 Cow Ghee and Cold-Pressed Oils crafted using traditional methods and delivered across India.</p>
+            <div class="hero__ctas">
+              <a href="shop.html" class="btn btn--gold btn--lg">Shop Now</a>
+              <a href="shop.html" class="btn btn--outline btn--lg">Explore Collection</a>
+            </div>
+            
+            <!-- Customer Rating -->
+            <div class="hero__rating">
+              <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+              <span class="rating-text"><strong>4.9/5</strong> (Trusted by thousands)</span>
+            </div>
+            
+            <!-- Organic Certifications -->
+            <div class="hero__certs">
+              <span class="cert-item">🛡️ FSSAI Certified</span>
+              <span class="cert-item">🌱 100% Organic</span>
+              <span class="cert-item">🇮🇳 Made in India</span>
+            </div>
+          </div>
+          
+          <!-- Right Column (55%) -->
+          <div class="hero__right">
+            <div class="hero__composition">
+              <div class="composition__glow"></div>
+              
+              <!-- Floating Glass Cards -->
+              <div class="glass-card glass-card--1 float-animation" style="--float-delay: 0s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Cold Pressed</span>
+              </div>
+              <div class="glass-card glass-card--2 float-animation" style="--float-delay: 1.5s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Farm Fresh</span>
+              </div>
+              <div class="glass-card glass-card--3 float-animation" style="--float-delay: 3s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Premium Quality</span>
+              </div>
+              <div class="glass-card glass-card--4 float-animation" style="--float-delay: 4.5s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">No Chemicals</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="hero__slide" data-slide="1">
+        <div class="hero__bg hero__bg--2"></div>
+        <div class="hero__container">
+          <!-- Left Column (45%) -->
+          <div class="hero__left">
+            <span class="hero__badge">🌿 100% Natural</span>
+            <h1 class="hero__title">Nature's Purest<br><em>Cold-Pressed Goodness</em></h1>
+            <p class="hero__desc">Extracted using traditional wooden churners — no chemicals, no heat processing. Pure, nutrient-rich oils for your family.</p>
+            <div class="hero__ctas">
+              <a href="shop.html" class="btn btn--gold btn--lg">Shop Now</a>
+              <a href="shop.html" class="btn btn--outline btn--lg">Explore Collection</a>
+            </div>
+            
+            <!-- Customer Rating -->
+            <div class="hero__rating">
+              <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+              <span class="rating-text"><strong>4.8/5</strong> (Trusted by thousands)</span>
+            </div>
+            
+            <!-- Organic Certifications -->
+            <div class="hero__certs">
+              <span class="cert-item">🛡️ FSSAI Certified</span>
+              <span class="cert-item">🌱 100% Organic</span>
+              <span class="cert-item">🇮🇳 Made in India</span>
+            </div>
+          </div>
+          
+          <!-- Right Column (55%) -->
+          <div class="hero__right">
+            <div class="hero__composition">
+              <div class="composition__glow"></div>
+              
+              <!-- Floating Glass Cards -->
+              <div class="glass-card glass-card--1 float-animation" style="--float-delay: 0.5s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Cold Pressed</span>
+              </div>
+              <div class="glass-card glass-card--2 float-animation" style="--float-delay: 2s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Farm Fresh</span>
+              </div>
+              <div class="glass-card glass-card--3 float-animation" style="--float-delay: 3.5s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Premium Quality</span>
+              </div>
+              <div class="glass-card glass-card--4 float-animation" style="--float-delay: 5s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">No Chemicals</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="hero__slide" data-slide="2">
+        <div class="hero__bg hero__bg--3"></div>
+        <div class="hero__container">
+          <!-- Left Column (45%) -->
+          <div class="hero__left">
+            <span class="hero__badge">🌿 100% Natural</span>
+            <h1 class="hero__title">From Our Farm<br><em>To Your Table</em></h1>
+            <p class="hero__desc">Every product is carefully sourced, traditionally processed, and delivered fresh to your doorstep with love and care.</p>
+            <div class="hero__ctas">
+              <a href="shop.html" class="btn btn--gold btn--lg">Shop Now</a>
+              <a href="shop.html" class="btn btn--outline btn--lg">Explore Collection</a>
+            </div>
+            
+            <!-- Customer Rating -->
+            <div class="hero__rating">
+              <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+              <span class="rating-text"><strong>4.9/5</strong> (Trusted by thousands)</span>
+            </div>
+            
+            <!-- Organic Certifications -->
+            <div class="hero__certs">
+              <span class="cert-item">🛡️ FSSAI Certified</span>
+              <span class="cert-item">🌱 100% Organic</span>
+              <span class="cert-item">🇮🇳 Made in India</span>
+            </div>
+          </div>
+          
+          <!-- Right Column (55%) -->
+          <div class="hero__right">
+            <div class="hero__composition">
+              <div class="composition__glow"></div>
+              
+              <!-- Floating Glass Cards -->
+              <div class="glass-card glass-card--1 float-animation" style="--float-delay: 0.8s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Cold Pressed</span>
+              </div>
+              <div class="glass-card glass-card--2 float-animation" style="--float-delay: 2.3s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Farm Fresh</span>
+              </div>
+              <div class="glass-card glass-card--3 float-animation" style="--float-delay: 3.8s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">Premium Quality</span>
+              </div>
+              <div class="glass-card glass-card--4 float-animation" style="--float-delay: 5.3s;">
+                <span class="glass-card__check">✓</span> <span class="glass-card__text">No Chemicals</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="hero__dots" id="heroDots">
+      <button class="hero__dot hero__dot--active" data-dot="0" aria-label="Slide 1"></button>
+      <button class="hero__dot" data-dot="1" aria-label="Slide 2"></button>
+      <button class="hero__dot" data-dot="2" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="why-choose" id="why-us">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__tag">Why Us</span>
+        <h2 class="section-header__title">Why Choose Elai Organics</h2>
+        <p class="section-header__sub">Rooted in tradition, committed to purity — discover what makes us different.</p>
+      </div>
+      <div class="why-choose__grid">
+        <div class="why-card reveal">
+          <div class="why-card__icon">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="#C89B3C" stroke-width="2"/><path d="M32 14c-6 8-16 14-16 24a16 16 0 0032 0c0-10-10-16-16-24z" fill="#0D4D3A" opacity=".15" stroke="#0D4D3A" stroke-width="2"/><path d="M32 28v12M28 36h8" stroke="#C89B3C" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="why-card__title">Authentic Ingredients</h3>
+          <p class="why-card__text">Sourced directly from organic farms and indigenous cow shelters across rural India. Every ingredient is pure, traceable, and hand-selected.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-card__icon">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="#C89B3C" stroke-width="2"/><path d="M20 44c4-8 8-20 12-20s8 12 12 20" stroke="#0D4D3A" stroke-width="2" fill="none"/><circle cx="32" cy="22" r="4" fill="#0D4D3A" opacity=".15" stroke="#0D4D3A" stroke-width="2"/><path d="M26 38h12" stroke="#C89B3C" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="why-card__title">Traditional Craftsmanship</h3>
+          <p class="why-card__text">We follow centuries-old Ayurvedic methods — Bilona churning, wood-pressed extraction, and slow-cooking — preserving nature's best.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-card__icon">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="#C89B3C" stroke-width="2"/><path d="M22 32l6 6 14-14" stroke="#0D4D3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="16" stroke="#0D4D3A" stroke-width="2" opacity=".2"/></svg>
+          </div>
+          <h3 class="why-card__title">Quality Tested</h3>
+          <p class="why-card__text">Every batch undergoes rigorous lab testing for purity, adulteration, and safety. We share lab reports — full transparency, always.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-3">
+          <div class="why-card__icon">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="#C89B3C" stroke-width="2"/><path d="M32 18v10l6 6" stroke="#0D4D3A" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="32" r="14" stroke="#0D4D3A" stroke-width="2" opacity=".2"/><path d="M24 46h16" stroke="#C89B3C" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="why-card__title">Daily Wellness</h3>
+          <p class="why-card__text">Designed for everyday use — from cooking to immunity boosting — our products fit naturally into your healthy lifestyle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED PRODUCTS ===================== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__tag">Our Products</span>
+        <h2 class="section-header__title">Featured Products</h2>
+        <p class="section-header__sub">Handcrafted with love, delivered with care.</p>
+      </div>
+      <div class="products__filters reveal">
+        <button class="products__filter products__filter--active" data-filter="all">All Products</button>
+        <button class="products__filter" data-filter="ghee">Ghee</button>
+        <button class="products__filter" data-filter="oil">Oils</button>
+      </div>
+      <div class="products__grid" id="productsGrid">
+        <!-- Product 1 -->
+        <div class="product-card reveal" data-category="ghee" data-name="A2 Bilona Ghee" data-price="999" data-image="images/ghee-jar.jpg">
+          <div class="product-card__badge">Bestseller</div>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="product-card__img-wrap">
+            <img src="images/ghee-jar.jpg" alt="A2 Bilona Ghee" class="product-card__image" loading="lazy">
+            <div class="product-card__quick-view">
+              <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__tag">500ml</span>
+            <h3 class="product-card__name">A2 Bilona Ghee</h3>
+            <p class="product-card__desc">Hand-churned from desi cow's curd using the traditional Bilona method.</p>
+            <div class="product-card__rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(230)</span>
+            </div>
+            <span class="product-card__stock product-card__stock--in">● In Stock</span>
+            <div class="product-card__footer">
+              <div class="product-card__pricing">
+                <span class="price--new">₹999</span>
+                <span class="price--old">₹1,299</span>
+              </div>
+              <button class="product-card__cart-btn add-to-cart-btn" aria-label="Add to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card reveal" data-category="oil" data-name="Cold-Pressed Groundnut Oil" data-price="449" data-image="images/groundnut-oil-dark.jpg">
+          <div class="product-card__badge product-card__badge--organic">Organic</div>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="product-card__img-wrap">
+            <img src="images/groundnut-oil-dark.jpg" alt="Cold-Pressed Groundnut Oil" class="product-card__image" loading="lazy">
+            <div class="product-card__quick-view">
+              <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__tag">500ml</span>
+            <h3 class="product-card__name">Cold-Pressed Groundnut Oil</h3>
+            <p class="product-card__desc">Wood-pressed peanut oil, perfect for everyday cooking and deep frying.</p>
+            <div class="product-card__rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(425)</span>
+            </div>
+            <span class="product-card__stock product-card__stock--in">● In Stock</span>
+            <div class="product-card__footer">
+              <div class="product-card__pricing">
+                <span class="price--new">₹449</span>
+                <span class="price--old">₹599</span>
+              </div>
+              <button class="product-card__cart-btn add-to-cart-btn" aria-label="Add to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card reveal" data-category="oil" data-name="Cold-Pressed Sesame Oil" data-price="399" data-image="images/sesame-oil-sage.jpg">
+          <div class="product-card__badge product-card__badge--sale">-25%</div>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="product-card__img-wrap">
+            <img src="images/sesame-oil-sage.jpg" alt="Cold-Pressed Sesame Oil" class="product-card__image" loading="lazy">
+            <div class="product-card__quick-view">
+              <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__tag">500ml</span>
+            <h3 class="product-card__name">Cold-Pressed Sesame Oil</h3>
+            <p class="product-card__desc">Traditional wood-pressed gingelly oil, ideal for South Indian cooking.</p>
+            <div class="product-card__rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(310)</span>
+            </div>
+            <span class="product-card__stock product-card__stock--in">● In Stock</span>
+            <div class="product-card__footer">
+              <div class="product-card__pricing">
+                <span class="price--new">₹399</span>
+                <span class="price--old">₹549</span>
+              </div>
+              <button class="product-card__cart-btn add-to-cart-btn" aria-label="Add to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card reveal" data-category="oil" data-name="Refined Coconut Oil" data-price="549" data-image="images/coconut-oil-dark.jpg">
+          <div class="product-card__badge product-card__badge--new">New</div>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="product-card__img-wrap">
+            <img src="images/coconut-oil-dark.jpg" alt="Refined Coconut Oil" class="product-card__image" loading="lazy">
+            <div class="product-card__quick-view">
+              <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__tag">1 Litre</span>
+            <h3 class="product-card__name">Refined Coconut Oil</h3>
+            <p class="product-card__desc">100% natural, wood cold-pressed from unroasted premium coconuts.</p>
+            <div class="product-card__rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-count">(270)</span>
+            </div>
+            <span class="product-card__stock product-card__stock--in">● In Stock</span>
+            <div class="product-card__footer">
+              <div class="product-card__pricing">
+                <span class="price--new">₹549</span>
+                <span class="price--old">₹699</span>
+              </div>
+              <button class="product-card__cart-btn add-to-cart-btn" aria-label="Add to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card reveal" data-category="ghee" data-name="A2 Gir Cow Ghee" data-price="1199" data-image="images/a2-gir-cow-ghee.jpg">
+          <div class="product-card__badge product-card__badge--premium">Premium</div>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <div class="product-card__img-wrap">
+            <img src="images/a2-gir-cow-ghee.jpg" alt="A2 Gir Cow Ghee" class="product-card__image" loading="lazy">
+            <div class="product-card__quick-view">
+              <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__tag">500ml</span>
+            <h3 class="product-card__name">A2 Gir Cow Ghee</h3>
+            <p class="product-card__desc">Premium Gir cow ghee, crafted using traditional Bilona method. 100% pure.</p>
+            <div class="product-card__rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(187)</span>
+            </div>
+            <span class="product-card__stock product-card__stock--low">● Only 5 left</span>
+            <div class="product-card__footer">
+              <div class="product-card__pricing">
+                <span class="price--new">₹1,199</span>
+                <span class="price--old">₹1,499</span>
+              </div>
+              <button class="product-card__cart-btn add-to-cart-btn" aria-label="Add to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8 reveal">
+        <a href="shop.html" class="btn btn--outline">View All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BEST SELLERS BANNER ===================== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <h2 class="cta-banner__title">Best Sellers Collection</h2>
+        <p class="cta-banner__desc">Our most-loved products chosen by thousands of families across India. Taste the difference of authentic, traditionally crafted organic goodness.</p>
+        <a href="shop.html" class="btn btn--gold btn--lg">Shop Best Sellers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIES ===================== -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__tag">Browse</span>
+        <h2 class="section-header__title">Shop by Category</h2>
+        <p class="section-header__sub">Explore our curated collection of pure, organic goodness.</p>
+      </div>
+      <div class="categories__grid reveal">
+        <a href="shop.html" class="category-card category-card--large">
+          <div class="category-card__bg" style="background-image: url('images/ghee-jar.jpg');"></div>
+          <div class="category-card__overlay"></div>
+          <h3 class="category-card__name">A2 Ghee</h3>
+          <span class="category-card__count">4 Products</span>
+        </a>
+        <a href="shop.html" class="category-card">
+          <div class="category-card__bg" style="background-image: url('images/groundnut-oil.jpg');"></div>
+          <div class="category-card__overlay"></div>
+          <h3 class="category-card__name">Groundnut Oil</h3>
+          <span class="category-card__count">3 Products</span>
+        </a>
+        <a href="shop.html" class="category-card">
+          <div class="category-card__bg" style="background-image: url('images/seed-oil-bottles.jpg');"></div>
+          <div class="category-card__overlay"></div>
+          <h3 class="category-card__name">Sesame Oil</h3>
+          <span class="category-card__count">3 Products</span>
+        </a>
+        <a href="shop.html" class="category-card">
+          <div class="category-card__bg" style="background-image: url('images/coconut-oil-green.jpg');"></div>
+          <div class="category-card__overlay"></div>
+          <h3 class="category-card__name">Coconut Oil</h3>
+          <span class="category-card__count">3 Products</span>
+        </a>
+        <a href="shop.html" class="category-card">
+          <div class="category-card__bg" style="background-image: url('images/desi-ghee.jpg');"></div>
+          <div class="category-card__overlay"></div>
+          <h3 class="category-card__name">Honey</h3>
+          <span class="category-card__count">5 Products</span>
+        </a>
+        <a href="shop.html" class="category-card">
+          <div class="category-card__bg" style="background-image: url('images/kitchen_cream.png');"></div>
+          <div class="category-card__overlay"></div>
+          <h3 class="category-card__name">Millets</h3>
+          <span class="category-card__count">8 Products</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRADITION TO TABLE ===================== -->
+  <section class="journey" id="journey">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__tag">Our Process</span>
+        <h2 class="section-header__title">From Tradition to Your Table</h2>
+        <p class="section-header__sub">Every product follows a meticulous 4-step journey from source to your home.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline__line">
+          <div class="timeline__progress" id="timelineProgress"></div>
+        </div>
+        <div class="timeline__steps">
+          <div class="timeline__step">
+            <div class="timeline__dot"><span>1</span></div>
+            <div class="timeline__icon">🌾</div>
+            <h3>Ingredient Selection</h3>
+            <p>Premium quality ingredients sourced with care from certified organic farms.</p>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__dot"><span>2</span></div>
+            <div class="timeline__icon">🏺</div>
+            <h3>Traditional Processing</h3>
+            <p>Crafted using heritage techniques that preserve natural goodness.</p>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__dot"><span>3</span></div>
+            <div class="timeline__icon">🔬</div>
+            <h3>Natural Purification</h3>
+            <p>Purity preserved without compromise through natural purification methods.</p>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__dot"><span>4</span></div>
+            <div class="timeline__icon">📦</div>
+            <h3>Fresh Packaging</h3>
+            <p>Packed fresh to retain richness and delivered with love to your home.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ORGANIC PROMISE ===================== -->
+  <section class="trust" id="trust">
+    <div class="container">
+      <div class="trust__grid reveal">
+        <div class="trust__item">
+          <div class="trust__icon">🌱</div>
+          <h4>100% Natural</h4>
+          <p>No preservatives or chemicals</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">🏺</div>
+          <h4>Traditional Methods</h4>
+          <p>Crafted using time-honored traditions</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">✨</div>
+          <h4>Pure & Wholesome</h4>
+          <p>Made with carefully selected ingredients</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">🇮🇳</div>
+          <h4>Made in Tamil Nadu</h4>
+          <p>Proudly crafted for our communities</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">🚚</div>
+          <h4>Fast Delivery</h4>
+          <p>Delivering across India with care</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__tag">Reviews</span>
+        <h2 class="section-header__title">Loved by Families Across Tamil Nadu</h2>
+        <p class="section-header__sub">Real people. Real results. Real trust.</p>
+      </div>
+      <div class="testimonials__slider reveal" id="testimonialSlider">
+        <div class="testimonials__track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">"The aroma and taste instantly reminded us of homemade ghee. Pure, authentic and simply outstanding! Our whole family loves it."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background: linear-gradient(135deg,#C89B3C,#8B5E3C);">L</div>
+              <div>
+                <strong class="testimonial-card__name">Lakshmi Priya</strong>
+                <span class="testimonial-card__loc">Coimbatore, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">"Finally found oils that feel authentic and trustworthy. Perfect for our everyday cooking! The groundnut oil has become a kitchen staple."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background: linear-gradient(135deg,#0D4D3A,#1a7a5e);">R</div>
+              <div>
+                <strong class="testimonial-card__name">Ramesh Kumar</strong>
+                <span class="testimonial-card__loc">Chennai, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">"Premium quality and traditional taste in every bottle. Elai Organics is now a part of our family. Highly recommend to everyone looking for pure products."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background: linear-gradient(135deg,#8B5E3C,#C89B3C);">M</div>
+              <div>
+                <strong class="testimonial-card__name">Meenakshi S.</strong>
+                <span class="testimonial-card__loc">Madurai, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials__controls">
+          <button class="testimonials__arrow" id="testPrev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="testimonials__dots" id="testDots"></div>
+          <button class="testimonials__arrow" id="testNext" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSTAGRAM GALLERY ===================== -->
+  <section class="instagram">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__tag">Gallery</span>
+        <h2 class="section-header__title">Our Product Gallery</h2>
+        <p class="section-header__sub">A glimpse into the world of Elai Organics — pure, traditional, and premium.</p>
+      </div>
+      <div class="instagram__grid reveal">
+        <div class="instagram__item"><img src="images/groundnut-oil-dark.jpg" alt="Groundnut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/coconut-oil-dark.jpg" alt="Coconut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/sesame-oil-sage.jpg" alt="Sesame Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/groundnut-oil-yellow.jpg" alt="Groundnut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/coconut-oil-beige.jpg" alt="Coconut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/sesame-oil-beige.jpg" alt="Sesame Oil" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-section__inner reveal">
+        <span class="section-header__tag">Stay Updated</span>
+        <h2 class="section-header__title">Get Exclusive Offers</h2>
+        <p class="section-header__sub">Subscribe to receive updates on new products, offers & traditional recipes.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo logo--footer">
+            <img src="images/logo.png" alt="Elai Organics" class="logo__image">
+          </a>
+          <p class="footer__about">Tradition Crafted. Naturally Nourishing. Premium organic products crafted using traditional Indian methods — from farm to home.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Shop</h4>
+          <ul class="footer__links">
+            <li><a href="shop.html">A2 Cow Ghee</a></li>
+            <li><a href="shop.html">Groundnut Oil</a></li>
+            <li><a href="shop.html">Sesame Oil</a></li>
+            <li><a href="shop.html">Coconut Oil</a></li>
+            <li><a href="shop.html">All Products</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Process</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Customer Care</h4>
+          <ul class="footer__links">
+            <li><a href="orders.html">Track Order</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="contact.html">FAQ's</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__newsletter">
+          <h4 class="footer__heading">Connect With Us</h4>
+          <p>📞 +91 70109 43545</p>
+          <p>✉️ hello@elaiorganics.com</p>
+          <p>📍 Coimbatore, Tamil Nadu</p>
+          <div style="margin-top: var(--sp-4)">
+            <h4 class="footer__heading" style="margin-top: var(--sp-4)">Newsletter</h4>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email" required>
+              <button type="submit" class="btn btn--primary btn--sm">Go</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__payments">
+          <span>We Accept:</span>
+          <div class="payment-icons">
+            <span class="payment-icon">💳 Visa</span>
+            <span class="payment-icon">💳 Mastercard</span>
+            <span class="payment-icon">📱 UPI</span>
+            <span class="payment-icon">🏦 Net Banking</span>
+            <span class="payment-icon">💰 COD</span>
+          </div>
+        </div>
+        <div class="footer__policies">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Refund Policy</a>
+          <a href="#">Shipping Policy</a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Elai Organics. All rights reserved. Made with ❤️ in India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== SLIDING CART DRAWER ===================== -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <h3 class="cart-drawer__title">Shopping Cart</h3>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <div class="cart-drawer__empty">
+        <div class="cart-drawer__empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+        <a href="shop.html" class="btn btn--primary btn--sm" style="margin-top: var(--sp-4)">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none;">
+      <div class="cart-drawer__coupon">
+        <input type="text" placeholder="Coupon code">
+        <button class="btn btn--outline btn--sm">Apply</button>
+      </div>
+      <div class="cart-drawer__delivery">🚚 Estimated delivery: 3-5 business days</div>
+      <div class="cart-drawer__summary">
+        <div class="cart-drawer__summary-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="cart-drawer__summary-row"><span>Shipping</span><span>Free</span></div>
+        <div class="cart-drawer__summary-row"><span>GST (5%)</span><span id="cartGst">₹0</span></div>
+        <div class="cart-drawer__summary-row cart-drawer__summary-row--total"><span>Total</span><span id="cartTotal">₹0</span></div>
+      </div>
+      <a href="checkout.html" class="btn btn--primary btn--full btn--lg">Proceed to Checkout</a>
+      <a href="shop.html" class="btn btn--ghost btn--full" style="margin-top: var(--sp-2)">Continue Shopping</a>
+    </div>
+  </aside>
+
+  <!-- ===================== SEARCH OVERLAY ===================== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay__inner">
+      <button class="search-overlay__close" id="searchClose" aria-label="Close search">&times;</button>
+      <h3>Search Products</h3>
+      <input type="text" class="search-overlay__input" placeholder="Search for ghee, oils, honey..." id="searchInput">
+      <p class="search-overlay__hint">Try: A2 Ghee, Groundnut Oil, Coconut Oil, Sesame Oil</p>
+    </div>
+  </div>
+
+  <!-- ===================== WHATSAPP FLOAT ===================== -->
+  <a href="https://wa.me/917010943545?text=Hi!%20I'm%20interested%20in%20Elai%20Organic%20products." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.128 6.742 3.046 9.376L1.054 31.4l6.256-1.96a15.89 15.89 0 008.694 2.564C24.826 32 32 24.826 32 16.004 32 7.176 24.826 0 16.004 0zm9.31 22.606c-.39 1.1-2.292 2.106-3.162 2.2-.792.086-1.79.122-2.89-.18a26.42 26.42 0 01-2.614-1.014c-4.6-1.988-7.604-6.652-7.834-6.964-.23-.312-1.876-2.498-1.876-4.764s1.188-3.382 1.61-3.844c.422-.462.92-.578 1.226-.578.306 0 .612.002.878.016.282.014.662-.108.986.752.338.888 1.146 2.8 1.248 3.004.1.204.17.442.032.714-.136.272-.204.442-.408.68-.204.238-.428.532-.612.714-.204.204-.416.426-.178.836.238.41 1.058 1.748 2.272 2.832 1.562 1.394 2.878 1.826 3.288 2.03.41.204.65.17.888-.102.238-.272 1.02-1.19 1.292-1.598.272-.41.544-.34.918-.204.374.136 2.374 1.12 2.784 1.324.41.204.682.306.782.476.1.17.1.986-.29 2.086z"/></svg>
+    <span class="whatsapp-float__tooltip">Chat with us</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

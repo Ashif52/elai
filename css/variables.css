@@ -1,0 +1,225 @@
+/* ============================================================
+   ELAI ORGANICS — Design System Variables
+   Premium Organic E-Commerce
+   ============================================================ */
+
+:root {
+  /* ── Color Palette ─────────────────────────────────── */
+
+  /* Primary — Deep Forest Greens */
+  --clr-primary-900: #062a1e;
+  --clr-primary-800: #0a3d2d;
+  --clr-primary-700: #0D4D3A;
+  --clr-primary-600: #126347;
+  --clr-primary-500: #1a7a5e;
+  --clr-primary-400: #2a9b78;
+  --clr-primary-300: #4dbd9a;
+  --clr-primary-200: #8dd8bf;
+  --clr-primary-100: #c5ede0;
+  --clr-primary-50:  #e8f7f1;
+
+  /* Accent — Warm Gold */
+  --clr-accent-900: #5c3a0a;
+  --clr-accent-800: #7a4f12;
+  --clr-accent-700: #9c6a1e;
+  --clr-accent-600: #b8802a;
+  --clr-accent-500: #C89B3C;
+  --clr-accent-400: #d4b060;
+  --clr-accent-300: #e0c584;
+  --clr-accent-200: #ecdaa8;
+  --clr-accent-100: #f5ebcc;
+  --clr-accent-50:  #faf5e6;
+
+  /* Neutral — Warm Grays & Earths */
+  --clr-neutral-950: #1a1a17;
+  --clr-neutral-900: #2d2d28;
+  --clr-neutral-800: #3d3d36;
+  --clr-neutral-700: #555550;
+  --clr-neutral-600: #6d6d66;
+  --clr-neutral-500: #8a8a82;
+  --clr-neutral-400: #a8a89f;
+  --clr-neutral-300: #c4c4bc;
+  --clr-neutral-200: #ddddd6;
+  --clr-neutral-100: #eeeeea;
+  --clr-neutral-50:  #f7f7f4;
+
+  /* Surface Colors */
+  --clr-surface-primary: #ffffff;
+  --clr-surface-cream:   #FFF8F0;
+  --clr-surface-beige:   #F5EFE6;
+  --clr-surface-warm:    #FAF6F0;
+  --clr-surface-sage:    #f0f4ef;
+  --clr-surface-dark:    #0D4D3A;
+
+  /* Semantic Colors */
+  --clr-success: #2a9b78;
+  --clr-warning: #e5a100;
+  --clr-error:   #d94f4f;
+  --clr-info:    #3b82c4;
+
+  /* Earth Tones */
+  --clr-earth-brown:  #8B5E3C;
+  --clr-earth-sienna: #a0674b;
+  --clr-earth-tan:    #c4a882;
+  --clr-earth-sand:   #e8d8c4;
+
+  /* ── Typography ────────────────────────────────────── */
+
+  --ff-heading: 'Playfair Display', 'Georgia', serif;
+  --ff-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ff-accent:  'Lora', 'Georgia', serif;
+
+  /* Font Sizes (rem) */
+  --fs-display:  clamp(2.8rem, 5vw, 4.5rem);
+  --fs-h1:       clamp(2.2rem, 4vw, 3.5rem);
+  --fs-h2:       clamp(1.8rem, 3vw, 2.5rem);
+  --fs-h3:       clamp(1.3rem, 2vw, 1.75rem);
+  --fs-h4:       clamp(1.1rem, 1.5vw, 1.35rem);
+  --fs-h5:       1.125rem;
+  --fs-body-lg:  1.125rem;
+  --fs-body:     1rem;
+  --fs-body-sm:  0.875rem;
+  --fs-caption:  0.8125rem;
+  --fs-tiny:     0.75rem;
+
+  /* Font Weights */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extrabold:800;
+
+  /* Line Heights */
+  --lh-tight:    1.2;
+  --lh-snug:     1.35;
+  --lh-normal:   1.6;
+  --lh-relaxed:  1.75;
+  --lh-loose:    2;
+
+  /* Letter Spacing */
+  --ls-tight:   -0.025em;
+  --ls-normal:   0;
+  --ls-wide:     0.05em;
+  --ls-wider:    0.1em;
+  --ls-widest:   0.2em;
+
+  /* ── Spacing Scale ─────────────────────────────────── */
+
+  --sp-1:   0.25rem;   /* 4px   */
+  --sp-2:   0.5rem;    /* 8px   */
+  --sp-3:   0.75rem;   /* 12px  */
+  --sp-4:   1rem;      /* 16px  */
+  --sp-5:   1.25rem;   /* 20px  */
+  --sp-6:   1.5rem;    /* 24px  */
+  --sp-8:   2rem;      /* 32px  */
+  --sp-10:  2.5rem;    /* 40px  */
+  --sp-12:  3rem;      /* 48px  */
+  --sp-14:  3.5rem;    /* 56px  */
+  --sp-16:  4rem;      /* 64px  */
+  --sp-20:  5rem;      /* 80px  */
+  --sp-24:  6rem;      /* 96px  */
+  --sp-32:  8rem;      /* 128px */
+
+  /* ── Border Radius ─────────────────────────────────── */
+
+  --radius-sm:   0.375rem;  /* 6px  */
+  --radius-md:   0.5rem;    /* 8px  */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-2xl:  1.5rem;    /* 24px */
+  --radius-3xl:  2rem;      /* 32px */
+  --radius-full: 9999px;
+
+  /* ── Shadows ───────────────────────────────────────── */
+
+  --shadow-xs:    0 1px 2px rgba(13,77,58,0.04);
+  --shadow-sm:    0 2px 4px rgba(13,77,58,0.06);
+  --shadow-md:    0 4px 12px rgba(13,77,58,0.08);
+  --shadow-lg:    0 8px 24px rgba(13,77,58,0.10);
+  --shadow-xl:    0 16px 48px rgba(13,77,58,0.12);
+  --shadow-2xl:   0 24px 64px rgba(13,77,58,0.16);
+  --shadow-inner: inset 0 2px 4px rgba(13,77,58,0.06);
+  --shadow-gold:  0 4px 20px rgba(200,155,60,0.25);
+  --shadow-card:  0 2px 16px rgba(13,77,58,0.07);
+  --shadow-card-hover: 0 8px 32px rgba(13,77,58,0.14);
+  --shadow-float: 0 12px 40px rgba(13,77,58,0.18);
+
+  /* ── Glassmorphism ─────────────────────────────────── */
+
+  --glass-bg:      rgba(255,255,255,0.72);
+  --glass-bg-dark: rgba(13,77,58,0.85);
+  --glass-blur:    blur(16px);
+  --glass-border:  1px solid rgba(255,255,255,0.2);
+
+  /* Apple Liquid Glass Navbar Extensions */
+  --glass-nav-bg: rgba(255, 255, 255, 0.85);
+  --glass-nav-border: 1px solid rgba(13, 77, 58, 0.15);
+  --glass-nav-glow: inset 0 1px 2px rgba(255, 255, 255, 0.6), inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+  --glass-nav-shadow: 0 12px 40px rgba(13, 77, 58, 0.12), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --glass-nav-blur: blur(24px);
+  --glass-nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+  --glass-nav-shadow-scrolled: 0 16px 48px rgba(13, 77, 58, 0.18), 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* ── Transitions ───────────────────────────────────── */
+
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+
+  --dur-fast:     150ms;
+  --dur-normal:   250ms;
+  --dur-slow:     400ms;
+  --dur-slower:   600ms;
+  --dur-slowest:  800ms;
+
+  --transition-fast:    all 150ms var(--ease-smooth);
+  --transition-normal:  all 250ms var(--ease-smooth);
+  --transition-slow:    all 400ms var(--ease-out);
+  --transition-spring:  all 500ms var(--ease-spring);
+
+  /* ── Z-Index Scale ─────────────────────────────────── */
+
+  --z-behind:     -1;
+  --z-base:       1;
+  --z-dropdown:   100;
+  --z-sticky:     200;
+  --z-header:     300;
+  --z-overlay:    400;
+  --z-drawer:     500;
+  --z-modal:      600;
+  --z-toast:      700;
+  --z-tooltip:    800;
+  --z-max:        999;
+
+  /* ── Layout ────────────────────────────────────────── */
+
+  --container-max:    1280px;
+  --container-narrow: 960px;
+  --container-wide:   1440px;
+  --container-pad:    clamp(1rem, 4vw, 2rem);
+
+  --header-height:    80px;
+  --header-height-mobile: 64px;
+  --topbar-height:    40px;
+
+  /* ── Gradients ─────────────────────────────────────── */
+
+  --grad-primary:    linear-gradient(135deg, #0D4D3A 0%, #1a7a5e 100%);
+  --grad-gold:       linear-gradient(135deg, #C89B3C 0%, #e0c584 100%);
+  --grad-dark:       linear-gradient(135deg, #062a1e 0%, #0D4D3A 100%);
+  --grad-warm:       linear-gradient(135deg, #FFF8F0 0%, #F5EFE6 100%);
+  --grad-hero:       linear-gradient(135deg, rgba(13,77,58,0.92) 0%, rgba(13,77,58,0.6) 50%, rgba(13,77,58,0.1) 100%);
+  --grad-hero-right: linear-gradient(to right, rgba(13,77,58,0.95) 0%, rgba(13,77,58,0.7) 40%, transparent 70%);
+  --grad-overlay:    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+  --grad-card:       linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(13,77,58,0.04) 100%);
+  --grad-shine:      linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+}
+
+/* Dark mode support (future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Can be extended later */
+  }
+}
