@@ -354,6 +354,41 @@
           mainImg.src = thumb.dataset.img;
         });
       });
+
+      // Touch swipe support for product gallery
+      const galleryMain = $('.product-gallery__main');
+      if (galleryMain) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        galleryMain.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        galleryMain.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const threshold = 50;
+          const diff = touchEndX - touchStartX;
+          if (Math.abs(diff) < threshold) return;
+
+          const activeIndex = thumbs.findIndex(t => t.classList.contains('product-gallery__thumb--active'));
+          if (activeIndex === -1) return;
+
+          let newIndex = activeIndex;
+          if (diff < 0) {
+            // Swiped left -> Next image
+            newIndex = (activeIndex + 1) % thumbs.length;
+          } else {
+            // Swiped right -> Prev image
+            newIndex = (activeIndex - 1 + thumbs.length) % thumbs.length;
+          }
+          thumbs[newIndex].click();
+        }
+      }
     }
 
     // ── Product Image Zoom ────────────────────────────
@@ -596,6 +631,146 @@
         }
       });
     });
+
+    // ── Apple-Style Slider Controller ──────────────────
+    function initAppleSlider(gridId, prevId, nextId, thumbId) {
+      const grid = $('#' + gridId);
+      const prevBtn = $('#' + prevId);
+      const nextBtn = $('#' + nextId);
+      const thumb = $('#' + thumbId);
+
+      if (!grid) return;
+
+      // Update progress bar and prev/next disabled state
+      function updateSliderStatus() {
+        const scrollWidth = grid.scrollWidth - grid.clientWidth;
+        if (scrollWidth <= 0) {
+          if (thumb) {
+            thumb.style.width = '100%';
+            thumb.style.left = '0%';
+          }
+          if (prevBtn) prevBtn.classList.add('carousel-btn--disabled');
+          if (nextBtn) nextBtn.classList.add('carousel-btn--disabled');
+          return;
+        }
+
+        const scrollLeft = grid.scrollLeft;
+        const progress = Math.max(0, Math.min(1, scrollLeft / scrollWidth));
+        
+        const visibleRatio = grid.clientWidth / grid.scrollWidth;
+        const thumbWidth = Math.max(15, Math.round(visibleRatio * 100));
+        
+        if (thumb) {
+          thumb.style.width = thumbWidth + '%';
+          thumb.style.left = (progress * (100 - thumbWidth)) + '%';
+        }
+
+        // Toggle button states
+        if (prevBtn) {
+          if (scrollLeft <= 5) prevBtn.classList.add('carousel-btn--disabled');
+          else prevBtn.classList.remove('carousel-btn--disabled');
+        }
+        if (nextBtn) {
+          if (scrollLeft + grid.clientWidth >= grid.scrollWidth - 5) nextBtn.classList.add('carousel-btn--disabled');
+          else nextBtn.classList.remove('carousel-btn--disabled');
+        }
+      }
+
+      // Scroll handlers for arrow buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          const cardWidth = grid.querySelector('.product-card')?.offsetWidth || 320;
+          const gap = 24;
+          grid.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          const cardWidth = grid.querySelector('.product-card')?.offsetWidth || 320;
+          const gap = 24;
+          grid.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+        });
+      }
+
+      // Drag to scroll logic for desktop mouse
+      let isDown = false;
+      let startX;
+      let scrollLeftVal;
+      let dragDistance = 0;
+      let isDragging = false;
+
+      grid.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false;
+        grid.style.scrollSnapType = 'none'; // Disable snapping temporarily to allow smooth drag
+        grid.style.scrollBehavior = 'auto';
+        startX = e.pageX - grid.offsetLeft;
+        scrollLeftVal = grid.scrollLeft;
+        dragDistance = 0;
+      });
+
+      grid.addEventListener('mouseleave', () => {
+        if (isDown) {
+          isDown = false;
+          grid.style.scrollSnapType = 'x mandatory';
+          grid.style.scrollBehavior = 'smooth';
+        }
+      });
+
+      grid.addEventListener('mouseup', () => {
+        if (isDown) {
+          isDown = false;
+          grid.style.scrollSnapType = 'x mandatory';
+          grid.style.scrollBehavior = 'smooth';
+          // Snap to nearest card
+          const scrollLeft = grid.scrollLeft;
+          const cardWidth = grid.querySelector('.product-card')?.offsetWidth || 320;
+          const gap = 24;
+          const snapIndex = Math.round(scrollLeft / (cardWidth + gap));
+          grid.scrollTo({ left: snapIndex * (cardWidth + gap), behavior: 'smooth' });
+        }
+      });
+
+      grid.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - grid.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        grid.scrollLeft = scrollLeftVal - walk;
+        dragDistance += Math.abs(walk);
+        if (dragDistance > 10) {
+          isDragging = true;
+        }
+      });
+
+      // Capture phase listener to prevent clicks while dragging
+      grid.addEventListener('click', (e) => {
+        if (isDragging) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }, true);
+
+      // Event listeners for scroll adjustments
+      grid.addEventListener('scroll', updateSliderStatus);
+      window.addEventListener('resize', updateSliderStatus);
+
+      // Initial status update (wait a tiny bit for render layout)
+      setTimeout(updateSliderStatus, 200);
+
+      // If category filter hides cards on home page, update slider layout
+      const filterBtns = $$('.products__filter');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setTimeout(updateSliderStatus, 450); // wait for fade out animations to end
+        });
+      });
+    }
+
+    // Initialize the sliders
+    initAppleSlider('productsGrid', 'featuredPrev', 'featuredNext', 'featuredThumb');
+    initAppleSlider('relatedGrid', 'relatedPrev', 'relatedNext', 'relatedThumb');
 
   }); // end DOMContentLoaded
 

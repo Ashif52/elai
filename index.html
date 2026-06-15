@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
 
@@ -61,12 +62,16 @@
         <a href="profile.html" class="action-btn" aria-label="Account">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+        <button class="hamburger-apple" id="hamburger-apple" aria-label="Toggle menu">
+          <span class="line line-top"></span>
+          <span class="line line-middle"></span>
+          <span class="line line-bottom"></span>
         </button>
       </div>
     </div>
   </header>
+
+  <div id="page-container">
 
   <!-- ===================== HERO SLIDER ===================== -->
   <section class="hero" id="hero">
@@ -284,16 +289,27 @@
   <section class="products" id="products">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-header__tag">Our Products</span>
-        <h2 class="section-header__title">Featured Products</h2>
-        <p class="section-header__sub">Handcrafted with love, delivered with care.</p>
+        <div class="section-header__title-group">
+          <span class="section-header__tag">Our Products</span>
+          <h2 class="section-header__title">Featured Products</h2>
+          <p class="section-header__sub">Handcrafted with love, delivered with care.</p>
+        </div>
+        <div class="section-header__actions">
+          <button class="carousel-btn carousel-btn--prev" id="featuredPrev" aria-label="Previous products">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="carousel-btn carousel-btn--next" id="featuredNext" aria-label="Next products">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
       </div>
       <div class="products__filters reveal">
         <button class="products__filter products__filter--active" data-filter="all">All Products</button>
         <button class="products__filter" data-filter="ghee">Ghee</button>
         <button class="products__filter" data-filter="oil">Oils</button>
       </div>
-      <div class="products__grid" id="productsGrid">
+      <div class="carousel-container">
+        <div class="products__grid products__grid--swipeable" id="productsGrid">
         <!-- Product 1 -->
         <div class="product-card reveal" data-category="ghee" data-name="A2 Bilona Ghee" data-price="999" data-image="images/ghee-jar.jpg">
           <div class="product-card__badge">Bestseller</div>
@@ -328,13 +344,13 @@
         </div>
 
         <!-- Product 2 -->
-        <div class="product-card reveal" data-category="oil" data-name="Cold-Pressed Groundnut Oil" data-price="449" data-image="images/groundnut-oil-dark.jpg">
+        <div class="product-card reveal" data-category="oil" data-name="Cold-Pressed Groundnut Oil" data-price="449" data-image="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.28 PM (1).jpeg">
           <div class="product-card__badge product-card__badge--organic">Organic</div>
           <button class="product-card__wishlist" aria-label="Add to wishlist">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </button>
           <div class="product-card__img-wrap">
-            <img src="images/groundnut-oil-dark.jpg" alt="Cold-Pressed Groundnut Oil" class="product-card__image" loading="lazy">
+            <img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.28 PM (1).jpeg" alt="Cold-Pressed Groundnut Oil" class="product-card__image" loading="lazy">
             <div class="product-card__quick-view">
               <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
             </div>
@@ -361,13 +377,13 @@
         </div>
 
         <!-- Product 3 -->
-        <div class="product-card reveal" data-category="oil" data-name="Cold-Pressed Sesame Oil" data-price="399" data-image="images/sesame-oil-sage.jpg">
+        <div class="product-card reveal" data-category="oil" data-name="Cold-Pressed Sesame Oil" data-price="399" data-image="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.24 PM.jpeg">
           <div class="product-card__badge product-card__badge--sale">-25%</div>
           <button class="product-card__wishlist" aria-label="Add to wishlist">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </button>
           <div class="product-card__img-wrap">
-            <img src="images/sesame-oil-sage.jpg" alt="Cold-Pressed Sesame Oil" class="product-card__image" loading="lazy">
+            <img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.24 PM.jpeg" alt="Cold-Pressed Sesame Oil" class="product-card__image" loading="lazy">
             <div class="product-card__quick-view">
               <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
             </div>
@@ -394,13 +410,13 @@
         </div>
 
         <!-- Product 4 -->
-        <div class="product-card reveal" data-category="oil" data-name="Refined Coconut Oil" data-price="549" data-image="images/coconut-oil-dark.jpg">
+        <div class="product-card reveal" data-category="oil" data-name="Refined Coconut Oil" data-price="549" data-image="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.26 PM (1).jpeg">
           <div class="product-card__badge product-card__badge--new">New</div>
           <button class="product-card__wishlist" aria-label="Add to wishlist">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </button>
           <div class="product-card__img-wrap">
-            <img src="images/coconut-oil-dark.jpg" alt="Refined Coconut Oil" class="product-card__image" loading="lazy">
+            <img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.26 PM (1).jpeg" alt="Refined Coconut Oil" class="product-card__image" loading="lazy">
             <div class="product-card__quick-view">
               <button class="btn btn--white btn--sm quick-view-btn">Quick View</button>
             </div>
@@ -459,7 +475,15 @@
           </div>
         </div>
       </div>
-      <div class="text-center mt-8 reveal">
+      
+      <!-- Progress Bar scroll indicator -->
+      <div class="carousel-scrollbar">
+        <div class="carousel-scrollbar__track">
+          <div class="carousel-scrollbar__thumb" id="featuredThumb"></div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 reveal">
         <a href="shop.html" class="btn btn--outline">View All Products →</a>
       </div>
     </div>
@@ -666,12 +690,12 @@
         <p class="section-header__sub">A glimpse into the world of Elai Organics — pure, traditional, and premium.</p>
       </div>
       <div class="instagram__grid reveal">
-        <div class="instagram__item"><img src="images/groundnut-oil-dark.jpg" alt="Groundnut Oil" loading="lazy"></div>
-        <div class="instagram__item"><img src="images/coconut-oil-dark.jpg" alt="Coconut Oil" loading="lazy"></div>
-        <div class="instagram__item"><img src="images/sesame-oil-sage.jpg" alt="Sesame Oil" loading="lazy"></div>
-        <div class="instagram__item"><img src="images/groundnut-oil-yellow.jpg" alt="Groundnut Oil" loading="lazy"></div>
-        <div class="instagram__item"><img src="images/coconut-oil-beige.jpg" alt="Coconut Oil" loading="lazy"></div>
-        <div class="instagram__item"><img src="images/sesame-oil-beige.jpg" alt="Sesame Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.28 PM (1).jpeg" alt="Groundnut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.26 PM (1).jpeg" alt="Coconut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.24 PM.jpeg" alt="Sesame Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.28 PM.jpeg" alt="Groundnut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.25 PM (2).jpeg" alt="Coconut Oil" loading="lazy"></div>
+        <div class="instagram__item"><img src="images/WhatsApp Unknown 2026-06-15 at 7.49.19 PM/WhatsApp Image 2026-06-15 at 3.02.23 PM (1).jpeg" alt="Sesame Oil" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -778,6 +802,7 @@
       </div>
     </div>
   </footer>
+  </div> <!-- end #page-container -->
 
   <!-- ===================== SLIDING CART DRAWER ===================== -->
   <div class="cart-drawer-overlay" id="cartOverlay"></div>
@@ -826,6 +851,111 @@
     <span class="whatsapp-float__tooltip">Chat with us</span>
   </a>
 
+  <!-- Floating Liquid Glass Panel Overlay -->
+  <div class="apple-nav-overlay">
+    <!-- Brand Header Logo -->
+    <div class="apple-nav__header">
+      <img src="images/logo.png" alt="Elai Organics" class="apple-nav__logo">
+    </div>
+    
+    <!-- Navigation Capsules -->
+    <nav aria-label="Mobile navigation menu">
+      <ul class="apple-nav__list">
+        <li class="apple-nav__item">
+          <a href="index.html" class="apple-nav__link apple-nav__link--active">
+            <span class="apple-nav__link-icon">🏠</span>
+            <span class="apple-nav__link-text">Home</span>
+          </a>
+        </li>
+        <li class="apple-nav__item">
+          <a href="shop.html" class="apple-nav__link">
+            <span class="apple-nav__link-icon">🌿</span>
+            <span class="apple-nav__link-text">Products</span>
+          </a>
+        </li>
+        <li class="apple-nav__item">
+          <a href="shop.html" class="apple-nav__link">
+            <span class="apple-nav__link-icon">🧈</span>
+            <span class="apple-nav__link-text">Best Sellers</span>
+          </a>
+        </li>
+        <li class="apple-nav__item">
+          <a href="index.html#why-us" class="apple-nav__link">
+            <span class="apple-nav__link-icon">⭐</span>
+            <span class="apple-nav__link-text">Why Us</span>
+          </a>
+        </li>
+        <li class="apple-nav__item">
+          <a href="about.html" class="apple-nav__link">
+            <span class="apple-nav__link-icon">📖</span>
+            <span class="apple-nav__link-text">Our Story</span>
+          </a>
+        </li>
+        <li class="apple-nav__item">
+          <a href="index.html#testimonials" class="apple-nav__link">
+            <span class="apple-nav__link-icon">💬</span>
+            <span class="apple-nav__link-text">Testimonials</span>
+          </a>
+        </li>
+        <li class="apple-nav__item">
+          <a href="contact.html" class="apple-nav__link">
+            <span class="apple-nav__link-icon">📞</span>
+            <span class="apple-nav__link-text">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <!-- Search Capsule -->
+    <div class="apple-nav__search-container apple-nav__item">
+      <form class="apple-nav__search-form" action="shop.html" method="GET">
+        <span class="apple-nav__search-icon">🔍</span>
+        <input type="text" name="search" class="apple-nav__search-input" placeholder="Search products..." aria-label="Search products">
+      </form>
+    </div>
+    
+    <!-- Premium Wishlist & Cart Cards -->
+    <div class="apple-nav__cards apple-nav__item">
+      <a href="wishlist.html" class="apple-nav__card apple-nav__card--wishlist">
+        <span class="apple-nav__card-icon">♡</span>
+        <div class="apple-nav__card-info">
+          <span class="apple-nav__card-title">Wishlist</span>
+          <span class="apple-nav__card-value" id="mobileWishlistCount">0 Items</span>
+        </div>
+      </a>
+      <button class="apple-nav__card apple-nav__card--cart" id="mobileCartBtn">
+        <span class="apple-nav__card-icon">🛒</span>
+        <div class="apple-nav__card-info">
+          <span class="apple-nav__card-title">Cart</span>
+          <span class="apple-nav__card-value" id="mobileCartTotal">₹0</span>
+        </div>
+      </button>
+    </div>
+    
+    <!-- Action Buttons (Primary / Secondary) -->
+    <div class="apple-nav__actions-group apple-nav__item">
+      <a href="shop.html" class="apple-nav__btn apple-nav__btn--primary">
+        <span class="apple-nav__btn-text">Shop Now</span>
+        <div class="apple-nav__btn-shine"></div>
+      </a>
+      <a href="shop.html" class="apple-nav__btn apple-nav__btn--secondary">Explore Collection</a>
+    </div>
+    
+    <!-- Social Circular Glass Icons -->
+    <div class="apple-nav__footer apple-nav__item">
+      <a href="#" class="apple-nav__social-btn" aria-label="Instagram">
+        <span class="apple-nav__social-icon">📸</span>
+      </a>
+      <a href="https://wa.me/917010943545" class="apple-nav__social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <span class="apple-nav__social-icon">💬</span>
+      </a>
+      <a href="tel:+917010943545" class="apple-nav__social-btn" aria-label="Call Us">
+        <span class="apple-nav__social-icon">📞</span>
+      </a>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="mobile-nav.js"></script>
 </body>
 </html>

@@ -2989,3 +2989,152 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(2, 1fr);
   gap: var(--sp-4) var(--sp-6);
 }
+
+/* ============================================================
+   APPLE-STYLE CAROUSEL & SWIPEABLE PRODUCTS
+   ============================================================ */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Horizontal scrolling wrapper */
+.products__grid--swipeable {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  padding: var(--sp-4) var(--container-pad) var(--sp-8);
+  margin-left: calc(-1 * var(--container-pad));
+  margin-right: calc(-1 * var(--container-pad));
+  gap: var(--sp-6);
+  cursor: grab;
+  user-select: none;
+}
+
+.products__grid--swipeable:active {
+  cursor: grabbing;
+}
+
+.products__grid--swipeable::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Slide Cards styling */
+.products__grid--swipeable .product-card {
+  flex: 0 0 320px;
+  width: 320px;
+  scroll-snap-align: start;
+  transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal) var(--ease-out);
+}
+
+.products__grid--swipeable .product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Apple-style circular glassmorphic controls in section headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.section-header__title-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.section-header__actions {
+  display: flex;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(13, 77, 58, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-primary-700);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-smooth);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+.carousel-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.5px;
+  transition: transform var(--dur-fast) var(--ease-smooth);
+}
+
+.carousel-btn:hover {
+  background: var(--clr-primary-700);
+  color: #fff;
+  border-color: var(--clr-primary-700);
+  transform: scale(1.06);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.96);
+}
+
+.carousel-btn--disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none !important;
+  border-color: rgba(13, 77, 58, 0.08) !important;
+  color: var(--clr-neutral-400) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Custom indicator scrollbar progress bar */
+.carousel-scrollbar {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-8);
+  width: 100%;
+}
+
+.carousel-scrollbar__track {
+  width: 180px;
+  height: 4px;
+  background: var(--clr-neutral-200);
+  border-radius: var(--radius-full);
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-scrollbar__thumb {
+  height: 100%;
+  width: 20%; /* Resize dynamically via JS */
+  background: var(--clr-primary-700);
+  border-radius: var(--radius-full);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  transition: transform 0.15s var(--ease-out), width 0.15s var(--ease-out);
+}

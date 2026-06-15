@@ -1,0 +1,663 @@
+/* ============================================================
+   APPLE LIQUID GLASS MOBILE NAVIGATION
+   iOS 26 / Premium Design Language
+   ============================================================ */
+
+@media (max-width: 992px) {
+  /* Hide standard mobile navigation overlays and menus */
+  .nav, 
+  .nav-overlay,
+  .header .hamburger {
+    display: none !important;
+  }
+
+  /* ── Morphing Hamburger Button ── */
+  .hamburger-apple {
+    display: flex !important;
+    flex-direction: column;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001; /* Above mobile overlay */
+    position: relative;
+    box-shadow: 
+      0 2px 8px rgba(13, 77, 58, 0.04),
+      inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    transition: 
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      background 300ms ease,
+      box-shadow 300ms ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hamburger-apple:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px) scale(1.04);
+    box-shadow: 
+      0 4px 12px rgba(13, 77, 58, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  }
+
+  .hamburger-apple:active {
+    transform: scale(0.95);
+  }
+
+  .hamburger-apple .line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--clr-primary-900);
+    border-radius: 2px;
+    transition: 
+      transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      width 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    position: absolute;
+    will-change: transform, opacity;
+  }
+
+  .hamburger-apple .line-top {
+    transform: translateY(-5px);
+  }
+
+  .hamburger-apple .line-middle {
+    transform: translateY(0);
+  }
+
+  .hamburger-apple .line-bottom {
+    transform: translateY(5px);
+  }
+
+  /* Morphing States when Open */
+  .hamburger-apple.active .line-top {
+    transform: rotate(45deg);
+  }
+
+  .hamburger-apple.active .line-middle {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  .hamburger-apple.active .line-bottom {
+    transform: rotate(-45deg);
+  }
+
+  /* ── Background Page Compression ── */
+  #page-container {
+    transition: 
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 600ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, filter;
+    transform-origin: center center;
+  }
+
+  body.apple-menu-open {
+    overflow: hidden !important;
+    background: #000 !important; /* Visual contrast behind compressed glass */
+  }
+
+  body.apple-menu-open #page-container {
+    transform: scale(0.982);
+    filter: blur(14px) brightness(0.85);
+    pointer-events: none !important;
+  }
+
+  /* ── Floating Liquid Glass Panel Overlay ── */
+  .apple-nav-overlay {
+    position: fixed;
+    top: 84px;
+    right: 16px;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    height: calc(100dvh - 104px);
+    background: rgba(255, 248, 240, 0.45); /* Warm translucent white/cream */
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    z-index: 1000;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: var(--sp-6) var(--sp-6) calc(var(--sp-6) + 10px);
+    gap: var(--sp-5);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Animation Inits */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.4) translate(40px, -40px);
+    transform-origin: top right;
+    filter: blur(20px);
+    box-shadow: 
+      0 4px 10px rgba(13, 77, 58, 0.02),
+      0 20px 50px rgba(13, 77, 58, 0.15),
+      inset 0 1px 2px rgba(255, 255, 255, 0.6);
+    
+    transition: 
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 550ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 600ms;
+    will-change: transform, opacity, filter;
+  }
+
+  .apple-nav-overlay::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Overlay Reflections & Noise */
+  .apple-nav-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background-image: radial-gradient(rgba(13, 77, 58, 0.04) 1px, transparent 0);
+    background-size: 8px 8px;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: -2;
+  }
+
+  .apple-nav-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+    border-radius: 30px 30px 0 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .apple-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translate(0, 0);
+    filter: blur(0);
+  }
+
+  /* ── Header ── */
+  .apple-nav__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: var(--sp-2);
+    border-bottom: 1px solid rgba(13, 77, 58, 0.08);
+  }
+
+  .apple-nav__logo {
+    height: 42px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(13, 77, 58, 0.05));
+  }
+
+  /* ── List Layout ── */
+  .apple-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ── Staggered Animating Children ── */
+  .apple-nav__item {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94) rotateX(-5deg);
+    filter: blur(8px);
+    transition: 
+      transform 550ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity, filter;
+  }
+
+  .apple-nav-overlay.active .apple-nav__item {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+    filter: blur(0);
+  }
+
+  /* Stagger Delays (physics-based sequencing) */
+  .apple-nav-overlay.active .apple-nav__item:nth-child(1) { transition-delay: 60ms; }
+  .apple-nav-overlay.active .apple-nav__item:nth-child(2) { transition-delay: 90ms; }
+  .apple-nav-overlay.active .apple-nav__item:nth-child(3) { transition-delay: 120ms; }
+  .apple-nav-overlay.active .apple-nav__item:nth-child(4) { transition-delay: 150ms; }
+  .apple-nav-overlay.active .apple-nav__item:nth-child(5) { transition-delay: 180ms; }
+  .apple-nav-overlay.active .apple-nav__item:nth-child(6) { transition-delay: 210ms; }
+  .apple-nav-overlay.active .apple-nav__item:nth-child(7) { transition-delay: 240ms; }
+  .apple-nav-overlay.active .apple-nav__search-container { transition-delay: 270ms; }
+  .apple-nav-overlay.active .apple-nav__cards { transition-delay: 300ms; }
+  .apple-nav-overlay.active .apple-nav__actions-group { transition-delay: 330ms; }
+  .apple-nav-overlay.active .apple-nav__footer { transition-delay: 360ms; }
+
+  /* ── Menu Links / Glass Capsules ── */
+  .apple-nav__link {
+    display: flex;
+    align-items: center;
+    padding: 13px 18px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    color: var(--clr-primary-900);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 52px;
+    box-shadow: 
+      0 2px 6px rgba(13, 77, 58, 0.02),
+      inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    transition: 
+      transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 300ms ease,
+      border-color 300ms ease,
+      box-shadow 300ms ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .apple-nav__link-icon {
+    font-size: 1.25rem;
+    margin-right: 14px;
+    display: inline-block;
+    transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .apple-nav__link-text {
+    display: inline-block;
+    transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Micro Interactions (Tactile States) */
+  .apple-nav__link:hover,
+  .apple-nav__link.hovered {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(13, 77, 58, 0.18);
+    box-shadow: 
+      0 4px 14px rgba(13, 77, 58, 0.06),
+      inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  }
+
+  .apple-nav__link:hover .apple-nav__link-icon,
+  .apple-nav__link.hovered .apple-nav__link-icon {
+    transform: rotate(8deg) scale(1.15);
+  }
+
+  .apple-nav__link:hover .apple-nav__link-text,
+  .apple-nav__link.hovered .apple-nav__link-text {
+    transform: translateX(4px);
+  }
+
+  .apple-nav__link:active,
+  .apple-nav__link.pressed {
+    transform: scale(0.965);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 
+      0 1px 4px rgba(13, 77, 58, 0.02),
+      inset 0 1px 4px rgba(13, 77, 58, 0.08);
+  }
+
+  /* Active indicator */
+  .apple-nav__link--active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 4px;
+    background: var(--clr-primary-700);
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── Search Capsule ── */
+  .apple-nav__search-container {
+    width: 100%;
+    padding: 2px 0;
+  }
+
+  .apple-nav__search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    padding: 11px 18px;
+    box-shadow: 
+      0 2px 6px rgba(13, 77, 58, 0.02),
+      inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    transition: all var(--dur-normal) var(--ease-spring);
+    min-height: 48px;
+  }
+
+  .apple-nav__search-icon {
+    font-size: 1rem;
+    margin-right: 10px;
+    opacity: 0.7;
+    transition: transform var(--dur-normal) var(--ease-spring);
+  }
+
+  .apple-nav__search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: var(--clr-primary-900);
+    font-weight: 500;
+    font-size: 0.93rem;
+  }
+
+  .apple-nav__search-input::placeholder {
+    color: var(--clr-neutral-600);
+    opacity: 0.75;
+  }
+
+  .apple-nav__search-form:focus-within {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--clr-primary-500);
+    box-shadow: 
+      0 8px 24px rgba(13, 77, 58, 0.08),
+      0 0 0 3px rgba(13, 77, 58, 0.15),
+      inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+  }
+
+  .apple-nav__search-form:focus-within .apple-nav__search-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  /* ── Premium Wishlist & Cart Cards ── */
+  .apple-nav__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .apple-nav__card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    color: var(--clr-primary-900);
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--dur-normal) var(--ease-spring);
+    box-shadow: 
+      0 2px 6px rgba(13, 77, 58, 0.02),
+      inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    min-height: 60px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .apple-nav__card:hover {
+    background: rgba(255, 255, 255, 0.55);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+      0 8px 20px rgba(13, 77, 58, 0.08),
+      inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  }
+
+  .apple-nav__card:active {
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .apple-nav__card-icon {
+    font-size: 1.4rem;
+    color: var(--clr-primary-700);
+    transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .apple-nav__card:hover .apple-nav__card-icon {
+    transform: scale(1.2) rotate(-8deg);
+  }
+
+  .apple-nav__card-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .apple-nav__card-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--clr-neutral-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+
+  .apple-nav__card-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--clr-primary-900);
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  /* ── Action Buttons ── */
+  .apple-nav__actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .apple-nav__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    min-height: 52px;
+    transition: all var(--dur-normal) var(--ease-spring);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-sm);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  /* Primary Apple Gold Button */
+  .apple-nav__btn--primary {
+    background: var(--grad-gold);
+    color: var(--clr-primary-900);
+    border: 1px solid rgba(200, 155, 60, 0.35);
+    box-shadow: 
+      0 6px 18px rgba(200, 155, 60, 0.22),
+      inset 0 1px 1px rgba(255, 255, 255, 0.45),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .apple-nav__btn--primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 10px 22px rgba(200, 155, 60, 0.3),
+      inset 0 1px 1px rgba(255, 255, 255, 0.55);
+  }
+
+  .apple-nav__btn--primary:active {
+    transform: scale(0.965);
+    box-shadow: 
+      0 3px 8px rgba(200, 155, 60, 0.12),
+      inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Shimmer Reflection Effect */
+  .apple-nav__btn-shine {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 70%
+    );
+    transition: all 0.6s ease;
+  }
+
+  @keyframes appleNavBtnShimmer {
+    0% { left: -150%; }
+    100% { left: 150%; }
+  }
+
+  .apple-nav__btn--primary:hover .apple-nav__btn-shine {
+    animation: appleNavBtnShimmer 1.4s infinite ease-in-out;
+  }
+
+  /* Secondary Outline Glass Button */
+  .apple-nav__btn--secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(13, 77, 58, 0.18);
+    color: var(--clr-primary-700);
+    box-shadow: 
+      0 2px 6px rgba(13, 77, 58, 0.02),
+      inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .apple-nav__btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: var(--clr-primary-700);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 6px 14px rgba(13, 77, 58, 0.06),
+      inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .apple-nav__btn--secondary:active {
+    transform: scale(0.965);
+  }
+
+  /* ── Contact Section Footer ── */
+  .apple-nav__footer {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: auto;
+    padding-top: var(--sp-4);
+    border-top: 1px solid rgba(13, 77, 58, 0.08);
+  }
+
+  .apple-nav__social-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-primary-700);
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 
+      0 2px 6px rgba(13, 77, 58, 0.02),
+      inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    transition: all var(--dur-normal) var(--ease-spring);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  /* Ripple expansion ring */
+  .apple-nav__social-btn::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-primary-400);
+    opacity: 0;
+    transform: scale(1);
+    transition: 
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  .apple-nav__social-btn:hover {
+    background: var(--clr-primary-700);
+    color: #fff;
+    border-color: var(--clr-primary-700);
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 
+      0 8px 18px rgba(13, 77, 58, 0.25),
+      0 0 0 3px rgba(13, 77, 58, 0.1);
+  }
+
+  .apple-nav__social-btn:hover::before {
+    opacity: 0.8;
+    transform: scale(1.35);
+  }
+
+  .apple-nav__social-btn:active {
+    transform: scale(0.92);
+  }
+
+  .apple-nav__social-icon {
+    font-size: 1.2rem;
+    transition: transform var(--dur-normal) var(--ease-spring);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apple-nav__social-btn:hover .apple-nav__social-icon {
+    transform: scale(1.15);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .apple-nav-overlay,
+  .hamburger-apple,
+  .hamburger-apple .line,
+  #page-container,
+  .apple-nav__item,
+  .apple-nav__link,
+  .apple-nav__card,
+  .apple-nav__btn,
+  .apple-nav__social-btn,
+  .apple-nav__social-btn::before {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .apple-nav-overlay {
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  #page-container {
+    transform: none !important;
+    filter: none !important;
+  }
+}
